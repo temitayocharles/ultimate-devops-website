@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CI/CD • Ultimate DevOps</title>
+  <style>
+    body {
+      background: #0f1117;
+      color: #cdd9e5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 2rem;
+      max-width: 960px;
+      margin: auto;
+    }
+
+    nav a {
+      color: #7bc4ff;
+      text-decoration: none;
+      margin-right: 1.5rem;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 10px #7bc4ff;
+    }
+
+    h1,
+    h2 {
+      color: #66fcf1;
+      text-shadow: 0 0 6px #45a29e;
+    }
+
+    pre {
+      background: #1b1e2f;
+      padding: 1em;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+
+    code {
+      background: #2e2f3e;
+      padding: .2em .5em;
+      border-radius: 3px;
+      color: #78e2a0;
+    }
+
+    footer {
+      margin-top: 4rem;
+      border-top: 1px solid #333;
+      padding-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .link-group a {
+      margin-right: 1rem;
+      color: #888;
+    }
+
+    .link-group a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="docs.html">Docs</a>
+    <a href="architecture.html">Architecture</a>
+    <a href="ci.html">CI/CD</a>
+  </nav>
+
+  <h1>🔁 CI/CD</h1>
+  <p>Automated builds, vulnerability scans, and push to DockerHub using GitHub Actions.</p>
+
+  <h2>🛠 GitHub Actions Workflow</h2>
+  <pre><code>.github/workflows/docker.yml
+
+- name: Build & Push
+  steps:
+    - uses: actions/checkout@v3
+    - name: Build Image
+      run: docker build -t ultimate-devops .
+    - name: Push Image
+      run: docker push temitayocharles/ultimate-devops:latest</code></pre>
+
+  <h2>✅ Security Checks</h2>
+  <ul>
+    <li>Trivy or Grype for CVE scan</li>
+    <li>Hadolint for Dockerfile linting</li>
+    <li>GitHub CodeQL (optional)</li>
+  </ul>
+
+  <h2>📤 Deployment Options</h2>
+  <ul>
+    <li>Pull in CI pipelines (Jenkins, Forgejo, GitHub)</li>
+    <li>Use as VS Code Remote DevContainer</li>
+  </ul>
+
+  <footer>
+    <div class="link-group">
+      <a href="https://github.com/temitayocharles/ultimate-devops" target="_blank">GitHub</a>
+      <a href="https://hub.docker.com/u/temitayocharles" target="_blank">DockerHub</a>
+      <a href="https://linkedin.com/in/temitayocharles" target="_blank">LinkedIn</a>
+    </div>
+    <p>© 2025 Charlie Temitayo • Secure. Portable. DevOps‑ready.</p>
+  </footer>
+</body>
+
+</html>
